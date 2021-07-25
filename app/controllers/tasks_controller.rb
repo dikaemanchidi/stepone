@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   before_action :set_task, only: %i[ show edit update destroy ]
   # GET /tasks or /tasks.json
   def index
-    @tasks = Task.all
+      @tasks = Task.order('created_at DESC')
   end
 
   # GET /tasks/1 or /tasks/1.json
